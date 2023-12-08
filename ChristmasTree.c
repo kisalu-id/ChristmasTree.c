@@ -1,41 +1,49 @@
- #include <stdio.h>
- #include <string.h>
+#include <stdio.h>
+#include <string.h>
 
 int main () {
-
+    
     int i, x;
-
-    char block1[50];
-    char block2[50];
-    char space[] = "X"; //starts from 8 at line1
+    int j = 2;
+    char space[] = "XXX";
     char top[] = "         *         \n";
     char line1[] = "  / \\  ";
     char line2[] = " / o \\ ";
     char line3[] = "+++++++";
-    char lineTwo1[] = "  / \\  \n";
-    char lineTwo2[] = " / o \\ \n"; //do i even need same thing but with \n? prolly not... 
-    char lineTwo3[] = "+++++++\n";
-//  strcpy(block1,line1); 
-//  strcat(block1, line1);
-//  strcat(block1, line3);
-    printf("%s", top);
-    //trying to create a "triangle" of distance that gets smaller every line
-        int j=8; 
-    for (x=0; x<j; x++) {
-        printf("%s", space);
-        j--;
-    }
+
+    printf ("%s", top);
+  
+  //here big loop
+    for (i = 0; i < 3; i++) {
         
-    //figuring out how to build from blocks and operate with lines
-    while (i<3) {
-        printf("%s", space); //j times, j--
-        printf("%s", line1);
-        strcpy(block1,line1); 
-        strcat(block1, line1);
-//        strcpy(line1, line1); try adding line1 to line1 in a loop? while/for?
-//        strcat(line1, line2);
-        i++;
+        //trying to create a "triangle" of distance that gets smaller every line
+        //edit later according to new spacing
+/*        for (x = 0; x<j; x++) {
+            printf ("%s", space);
+        }
+        */
+        
+        //figuring out how to build from blocks and operate with lines
+        
+        //copy line1 to line1, then as next step adding line1 to that
+        printf ("%s", line1);
+        strcat (line1, "  / \\  ");
+        printf ("\n");
+        
+        //for checking
+        printf ("newline\n\n");
+          
+        printf ("%s", line2);
+        strcat (line2, " / o \\ ");
+        printf ("\n");
+          
+        printf ("%s", line3);
+        strcat (line3, "+++++++");
+        printf ("\n");
+        
+        j--;
+
     }
 
-        return 0;
+    return 0;
 }
