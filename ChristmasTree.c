@@ -21,15 +21,11 @@ int main () {
   //here big loop
     for (i = 0; i < 3; i++) {
         
-        //trying to create a distance that gets smaller every 3 lines
-///*
+        //a distance that gets smaller every 3 lines
         for (x = 0; x<j; x++) {
             printf ("%s", space);
         }
-//*/ 
-
-        //figuring out how to build from blocks and operate with lines
-        
+    
         //copy line1 to line1, then as next step adding line1 to that
         printf ("%s", line1);
         strcat (line1, "  / \\  ");
