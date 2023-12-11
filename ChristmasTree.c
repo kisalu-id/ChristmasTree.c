@@ -5,24 +5,29 @@ int main () {
     
     int i, x;
     int j = 2;
-    char space[] = "XXX";
-    char top[] = "         *         \n";
-    char line1[] = "  / \\  ";
-    char line2[] = " / o \\ ";
-    char line3[] = "+++++++";
+    char space[] = "   ";
+    char top[] = "*\n";
+    char line1[50] = "  / \\  ";
+    char line2[50] = " / o \\ ";
+    char line3[50] = "+++++++";
 
+    //spacing for top
+    for (x = 0; x<3; x++) {
+        printf ("%s", space);
+    }
+    
     printf ("%s", top);
   
   //here big loop
     for (i = 0; i < 3; i++) {
         
-        //trying to create a "triangle" of distance that gets smaller every line
-        //edit later according to new spacing
-/*        for (x = 0; x<j; x++) {
+        //trying to create a distance that gets smaller every 3 lines
+///*
+        for (x = 0; x<j; x++) {
             printf ("%s", space);
         }
-        */
-        
+//*/ 
+
         //figuring out how to build from blocks and operate with lines
         
         //copy line1 to line1, then as next step adding line1 to that
@@ -30,13 +35,18 @@ int main () {
         strcat (line1, "  / \\  ");
         printf ("\n");
         
-        //for checking
-        printf ("newline\n\n");
-          
+        for (x = 0; x<j; x++) {
+            printf ("%s", space);
+        }
+
         printf ("%s", line2);
-        strcat (line2, " / o \\ ");
+        strcat (line2, " / o \\");
         printf ("\n");
-          
+        
+        for (x = 0; x<j; x++) {
+            printf ("%s", space);
+        }
+        
         printf ("%s", line3);
         strcat (line3, "+++++++");
         printf ("\n");
@@ -44,6 +54,6 @@ int main () {
         j--;
 
     }
-
+    
     return 0;
 }
